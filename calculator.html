@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+</head>
+<body>
+
+<h1>Percentage Calculator</h1>
+
+<input type="number" id="obtained" placeholder="Obtained marks">
+<input type="number" id="total" placeholder="Total marks">
+
+<button onclick="calculate()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+function calculate() {
+var o=document.getElementById("obtained").value;
+var t=document.getElementById("total").value;
+document.getElementById("result").innerHTML =
+"Percentage: "+(o/t*100).toFixed(2)+"%";
+}
+</script>
+
+<a href="index.html">Back</a>
+
+</body>
+</html>
