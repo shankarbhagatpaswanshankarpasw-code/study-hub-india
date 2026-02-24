@@ -5,72 +5,124 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 body{
-font-family: Arial;
-background: linear-gradient(135deg,#4facfe,#00f2fe);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
 margin:0;
+font-family:Arial, sans-serif;
+background: linear-gradient(135deg,#1e90ff,#00c9a7);
 }
 
-.box{
-background:white;
-padding:30px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 0 15px rgba(0,0,0,0.2);
-width:300px;
-}
-
-a{
-display:block;
-margin:10px;
-padding:12px;
-background:#4facfe;
+.header{
+background:#0d6efd;
 color:white;
-text-decoration:none;
-border-radius:8px;
+padding:20px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
 }
 
-a:hover{
-background:#0077ff;
+.container{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:20px;
 }
+
+.card{
+background:white;
+border-radius:15px;
+padding:20px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+text-decoration:none;
+color:black;
+font-weight:bold;
+cursor:pointer;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.icon{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.back{
+display:block;
+margin:20px;
+text-align:center;
+background:white;
+padding:12px;
+border-radius:10px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+}
+
 </style>
+
+<script>
+function openPDF(file){
+
+  // open PDF in new tab
+  window.open(file, "_blank");
+
+  // download PDF
+  var link = document.createElement("a");
+  link.href = file;
+  link.download = file;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+}
+</script>
+
 </head>
 
 <body>
 
-<div class="box">
+<div class="header">
+📚 Study Hub India (Class 10)
+</div>
 
-<h2>Class 10 Notes 📚</h2>
+<div class="container">
 
-<a href="science.pdf" target="_blank">
-Science Notes 🔬
-</a>
+<div onclick="openPDF('science_objective_questions.pdf')" class="card">
+<div class="icon">🔬</div>
+Science Notes
+</div>
 
-<a href="math.pdf" target="_blank">
-Math Notes ➗
-</a>
+<div onclick="openPDF('math.pdf')" class="card">
+<div class="icon">➗</div>
+Math Notes
+</div>
 
-<a href="sst.pdf" target="_blank">
-Social Science Notes 🌍
-</a>
+<div onclick="openPDF('social_science.pdf')" class="card">
+<div class="icon">🌍</div>
+Social Science
+</div>
 
-<a href="english.pdf" target="_blank">
-English Notes 📖
-</a>
+<div onclick="openPDF('english.pdf')" class="card">
+<div class="icon">📖</div>
+English Notes
+</div>
 
-<a href="hindi.pdf" target="_blank">
-Hindi Notes 📝
-</a>
+<div onclick="openPDF('hindi.pdf')" class="card">
+<div class="icon">📝</div>
+Hindi Notes
+</div>
 
-<a href="index.html">
-⬅ Back to Home
-</a>
+<div onclick="openPDF('sanskrit.pdf')" class="card">
+<div class="icon">📜</div>
+Sanskrit Notes
+</div>
 
 </div>
+
+<a href="index.html" class="back">⬅ Back to Home</a>
 
 </body>
 </html>
