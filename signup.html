@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signup - Study Hub India</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Create Account</h2>
+
+<input type="email" id="email" placeholder="Enter Email">
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button onclick="signup()">Signup</button>
+
+<p>Already have account?
+<a href="login.html">Login</a>
+</p>
+
+</div>
+
+<script>
+
+function signup(){
+
+localStorage.setItem(
+"email",
+document.getElementById("email").value
+);
+
+localStorage.setItem(
+"password",
+document.getElementById("password").value
+);
+
+alert("Account Created Successfully ✅");
+
+window.location="login.html";
+
+}
+
+</script>
+
+</body>
+</html>
