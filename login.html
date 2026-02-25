@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login - Study Hub India</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Login</h2>
+
+<input type="email" id="email" placeholder="Enter Email">
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button onclick="login()">Login</button>
+
+<p>No account?
+<a href="signup.html">Signup</a>
+</p>
+
+</div>
+
+<script>
+
+function login(){
+
+var email =
+document.getElementById("email").value;
+
+var password =
+document.getElementById("password").value;
+
+if(
+email==localStorage.getItem("email")
+&&
+password==localStorage.getItem("password")
+){
+
+alert("Login Successful 🎉");
+
+window.location="dashboard.html";
+
+}
+
+else{
+
+alert("Wrong Email or Password ❌");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
