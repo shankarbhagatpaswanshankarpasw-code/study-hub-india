@@ -1,32 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Dashboard - Study Hub India</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Hub India Dashboard</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+}
+
+/* Header */
+.header{
+    padding:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* Card container */
+.container{
+    padding:15px;
+}
+
+/* Card */
+.card{
+    background:white;
+    color:black;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Buttons */
+.btn{
+    display:block;
+    text-align:center;
+    background:#667eea;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-top:10px;
+}
+
+.btn:hover{
+    background:#5563d6;
+}
+
+/* Logout */
+.logout{
+    position:fixed;
+    bottom:20px;
+    left:15px;
+    right:15px;
+}
+</style>
+
 </head>
 <body>
 
+<div class="header">
+📚 Study Hub India
+</div>
+
 <div class="container">
 
-<h2>Welcome to Study Hub India 🎉</h2>
+<div class="card">
+<h3>Welcome 👋</h3>
+<p>Your dashboard is ready.</p>
+</div>
 
-<p>You are successfully logged in ✅</p>
+<div class="card">
+<h3>📊 Tools</h3>
+<a href="#" class="btn">Percentage Calculator</a>
+<a href="#" class="btn">Notes Download</a>
+<a href="#" class="btn">Important Questions</a>
+</div>
 
-<button onclick="logout()">Logout</button>
+<div class="card">
+<h3>👤 Profile</h3>
+<a href="#" class="btn">View Profile</a>
+</div>
 
 </div>
 
-<script>
-
-function logout(){
-
-alert("Logged out");
-
-window.location="index.html";
-
-}
-
-</script>
+<a href="index.html" class="btn logout">Logout</a>
 
 </body>
-</html>
+</html
