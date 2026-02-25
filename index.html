@@ -50,7 +50,48 @@ margin-bottom:10px;
 </head>
 
 <body>
+<script>
+// check login
+var user = localStorage.getItem("user");
+if(!user){
+    window.location.href = "login.html";
+}
+</script>
 
+<div style="
+background:#111;
+color:white;
+padding:12px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+">
+
+<span id="welcomeText"></span>
+
+<button onclick="logout()" style="
+padding:6px 12px;
+border:none;
+background:red;
+color:white;
+border-radius:5px;
+cursor:pointer;
+">
+Logout
+</button>
+
+</div>
+
+<script>
+// show email
+document.getElementById("welcomeText").innerText = "Welcome, " + user;
+
+// logout function
+function logout(){
+    localStorage.removeItem("user");
+    window.location.href="login.html";
+}
+</script>
 <div class="header">
 Study Hub India 📚 (Class 10)
 </div>
