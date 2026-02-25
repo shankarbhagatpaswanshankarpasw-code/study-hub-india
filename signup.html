@@ -2,46 +2,89 @@
 <html>
 <head>
 <title>Signup - Study Hub India</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#43cea2,#185a9d);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+text-align:center;
+width:300px;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:8px 0;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#0077ff;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+}
+
+button:hover{
+background:#005fcc;
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="box">
+<h2>Signup</h2>
 
-<h2>Create Account</h2>
-
-<input type="email" id="email" placeholder="Enter Email">
-
-<input type="password" id="password" placeholder="Enter Password">
+<input type="text" id="username" placeholder="Username"><br>
+<input type="email" id="email" placeholder="Email"><br>
+<input type="password" id="password" placeholder="Password"><br>
 
 <button onclick="signup()">Signup</button>
 
-<p>Already have account?
-<a href="login.html">Login</a>
-</p>
+<br><br>
+<a href="login.html">Already have account? Login</a>
 
 </div>
 
 <script>
-
 function signup(){
 
-localStorage.setItem(
-"email",
-document.getElementById("email").value
-);
+var user=document.getElementById("username").value;
+var email=document.getElementById("email").value;
+var pass=document.getElementById("password").value;
 
-localStorage.setItem(
-"password",
-document.getElementById("password").value
-);
-
-alert("Account Created Successfully ✅");
-
-window.location="login.html";
-
+if(user=="" || email=="" || pass==""){
+alert("Please fill all fields");
+return;
 }
 
+localStorage.setItem("user",user);
+localStorage.setItem("email",email);
+localStorage.setItem("pass",pass);
+
+alert("Signup successful ✅");
+
+window.location.href="login.html";
+
+}
 </script>
 
 </body>
