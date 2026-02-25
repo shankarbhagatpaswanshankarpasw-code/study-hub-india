@@ -2,56 +2,101 @@
 <html>
 <head>
 <title>Login - Study Hub India</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#667eea,#764ba2);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+text-align:center;
+width:280px;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:8px 0;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#0077ff;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+}
+
+button:hover{
+background:#005fcc;
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
-
+<div class="box" id="loginBox">
 <h2>Login</h2>
 
-<input type="email" id="email" placeholder="Enter Email">
-
-<input type="password" id="password" placeholder="Enter Password">
+<input type="text" id="username" placeholder="Username"><br>
+<input type="password" id="password" placeholder="Password"><br>
 
 <button onclick="login()">Login</button>
-
-<p>No account?
-<a href="signup.html">Signup</a>
-</p>
+<br><br>
+<a href="signup.html">Create account</a>
 
 </div>
 
-<script>
+<div class="box" id="welcomeBox" style="display:none;">
+<h2>Welcome to Study Hub India 🎉</h2>
+<p>Login successful ✅</p>
+<button onclick="logout()">Logout</button>
+</div>
 
+<script>
 function login(){
 
-var email =
-document.getElementById("email").value;
+var user=document.getElementById("username").value;
+var pass=document.getElementById("password").value;
 
-var password =
-document.getElementById("password").value;
+var savedUser=localStorage.getItem("user");
+var savedPass=localStorage.getItem("pass");
 
-if(
-email==localStorage.getItem("email")
-&&
-password==localStorage.getItem("password")
-){
+if(user==savedUser && pass==savedPass){
 
-alert("Login Successful 🎉");
+document.getElementById("loginBox").style.display="none";
+document.getElementById("welcomeBox").style.display="block";
 
-window.location="dashboard.html";
+setTimeout(function(){
+window.location.href="index.html";
+},1000);
 
 }
-
 else{
-
-alert("Wrong Email or Password ❌");
-
+alert("Wrong username or password");
 }
 
 }
 
+function logout(){
+localStorage.removeItem("loggedIn");
+window.location.href="login.html";
+}
 </script>
 
 </body>
